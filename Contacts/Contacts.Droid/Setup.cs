@@ -26,7 +26,8 @@ namespace Contacts.Droid
             var container = Mvx.IoCProvider.Resolve<IMvxViewsContainer>();
             viewModelViewLookup = new Dictionary<Type, Type>
             {
-                {typeof(ContactsViewModel), typeof(ContactsActivity)}
+                {typeof(ContactsViewModel), typeof(ContactsActivity)},
+                {typeof(ContactViewModel), typeof(ContactActivity)}
             };
             container.AddAll(viewModelViewLookup);
             return container;

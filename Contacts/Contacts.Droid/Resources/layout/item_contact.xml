@@ -1,17 +1,19 @@
-<?xml version="1.0" encoding="utf-8"?>
+
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:background="@android:color/white"
+    android:foreground="?android:attr/selectableItemBackground"
     android:layout_width="match_parent"
     android:gravity="center|left"
-    android:paddingHorizontal="16dp"
+    android:paddingHorizontal="20dp"
     android:paddingVertical="8dp"
     android:layout_height="wrap_content">
     <TextView
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:id="@+id/item_contact_name"
-        android:text="Name"
+        android:text="Имя"
         local:MvxBind="Text Name;"
         android:textSize="16sp"
         android:layout_width="wrap_content"
@@ -21,6 +23,7 @@
         android:layout_alignParentLeft="true"
         android:id="@+id/item_contact_phone"
         android:text="phone"
+        android:layout_marginTop="4dp"
         local:MvxBind="Text Phone;"
         android:textSize="14sp"
         android:layout_width="wrap_content"

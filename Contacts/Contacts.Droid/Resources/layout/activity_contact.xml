@@ -1,7 +1,75 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
-</LinearLayout>
+    <include
+        android:elevation="4dp"
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+    <ScrollView
+        android:layout_below="@id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/activity_contact_name"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="10dp"
+                android:text="Name Surname"
+                android:textSize="20sp"
+                local:MvxBind="Text Name;"
+                android:textColor="@android:color/black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/activity_contact_phone"
+                android:layout_below="@id/activity_contact_name"
+                android:layout_marginBottom="8dp"
+                android:layout_marginHorizontal="16dp"
+                android:text="phone"
+                android:textSize="16sp"
+                local:MvxBind="Text Phone;"
+                android:autoLink="phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:textColor="@color/material_grey_600"
+                android:id="@+id/activity_contact_temperament"
+                android:layout_below="@id/activity_contact_phone"
+                android:layout_marginBottom="8dp"
+                android:layout_marginHorizontal="16dp"
+                android:text="Temperament"
+                android:textSize="14sp"
+                local:MvxBind="Text Temperament;"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:textColor="@color/material_grey_600"
+                android:id="@+id/activity_contact_education_period"
+                android:layout_below="@id/activity_contact_temperament"
+                android:layout_marginBottom="8dp"
+                android:layout_marginHorizontal="16dp"
+                android:text="EducationPeriod"
+                android:textSize="14sp"
+                local:MvxBind="Text EducationPeriod;"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:textColor="@android:color/black"
+                android:id="@+id/activity_contact_education_biography"
+                android:layout_below="@id/activity_contact_education_period"
+                android:layout_marginBottom="8dp"
+                android:layout_marginHorizontal="16dp"
+                android:text="Biography"
+                android:textSize="14sp"
+                local:MvxBind="Text Biography;"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

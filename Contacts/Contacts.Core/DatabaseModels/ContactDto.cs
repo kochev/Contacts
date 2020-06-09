@@ -12,12 +12,13 @@ namespace Contacts.Core.DatabaseModels
 
         public ContactDto(Contact contact)
         {
+            Id = contact.Id;
             Name = contact.Name;
             Biography = contact.Biography;
             EducationPeriod = new EducationPeriodDto(contact.EducationPeriod);
             Phone = contact.Phone;
             Height = contact.Height;
-            Temperament = (int) contact.Temperament;
+            Temperament = (int)contact.Temperament;
         }
 
         public string Name { get; set; }
@@ -33,7 +34,7 @@ namespace Contacts.Core.DatabaseModels
             return new Contact
             {
                 Phone = Phone,
-                Temperament = (Temperament) Temperament,
+                Temperament = (Temperament)Temperament,
                 Biography = Biography,
                 Name = Name,
                 Height = Height,
@@ -51,6 +52,7 @@ namespace Contacts.Core.DatabaseModels
 
         public EducationPeriodDto(EducationPeriod period)
         {
+            Id = Guid.NewGuid().ToString();
             Start = period.Start;
             End = period.End;
         }

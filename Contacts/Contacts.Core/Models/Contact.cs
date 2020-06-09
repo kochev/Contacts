@@ -16,10 +16,10 @@ namespace Contacts.Core.Models
 
     public enum Temperament
     {
-        [Description("melancholic")] Melancholic = 1,
-        [Description("phlegmatic")] Phlegmatic,
-        [Description("sanguine")] Sanguine,
-        [Description("choleric")] Choleric
+        [Description("Melancholic")] Melancholic = 1,
+        [Description("Phlegmatic")] Phlegmatic,
+        [Description("Sanguine")] Sanguine,
+        [Description("Choleric")] Choleric
     }
 
 

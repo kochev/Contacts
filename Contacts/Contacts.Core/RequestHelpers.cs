@@ -6,7 +6,7 @@ namespace Contacts.Core
     {
         public static TimeSpan ShortTimeout = TimeSpan.FromSeconds(10);
         public static TimeSpan MediumTimeout = TimeSpan.FromSeconds(20);
-        public static TimeSpan LongTimeout = TimeSpan.FromSeconds(30);
+        public static TimeSpan LongTimeout = TimeSpan.FromSeconds(60);
 
         #region url's
 

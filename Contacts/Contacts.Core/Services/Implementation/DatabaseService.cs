@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using MvvmCross;
 using MvvmCross.Base;
 using Realms;
@@ -27,9 +28,17 @@ namespace Contacts.Core.Services.Implementation
             await _dispatcher.ExecuteOnMainThreadAsync(() => { Database = Realm.GetInstance(); });
         }
 
-        public void AddOrUpdate<T>(T @object) where T : RealmObject
+        public async void AddOrUpdate<T>(T @object) where T : RealmObject
         {
-            _dispatcher.ExecuteOnMainThreadAsync(() => { Database.Write(() => { Database.Add(@object, true); }); });
+            await Database.WriteAsync(realm => realm.Add(@object, true));
+        }
+
+        public async void AddOrUpdate<T>(IEnumerable<T> objects) where T : RealmObject
+        {
+            await Database.WriteAsync(realm =>
+            {
+                foreach (var o in objects) realm.Add(o, true);
+            });
         }
 
         public void Remove<T>(T @object) where T : RealmObject

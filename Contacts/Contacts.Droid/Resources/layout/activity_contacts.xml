@@ -7,12 +7,26 @@
         android:elevation="4dp"
         android:id="@+id/toolbar"
         layout="@layout/toolbar" />
-    <MvvmCross.Droid.Support.V7.RecyclerView.MvxRecyclerView
+    <MvvmCross.Droid.Support.V4.MvxSwipeRefreshLayout
+        android:id="@+id/activity_contacts_refreshlayout"
+        local:MvxBind="Refreshing ShowProgress; RefreshCommand RefreshCommand; "
         android:layout_below="@id/toolbar"
         android:background="@android:color/white"
-        android:id="@+id/activity_contacts_recyclerview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        local:MvxItemTemplate="@layout/item_contact"
-        local:MvxBind="ItemsSource Contacts; ItemClick ContactClickCommand;"/>
+        android:layout_height="wrap_content">
+        <MvvmCross.Droid.Support.V7.RecyclerView.MvxRecyclerView
+            android:id="@+id/activity_contacts_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            local:MvxItemTemplate="@layout/item_contact"
+            local:MvxBind="ItemsSource Contacts; ItemClick ContactClickCommand; Visible ShowProgress, Converter=InvertBool;"/>
+    </MvvmCross.Droid.Support.V4.MvxSwipeRefreshLayout>
+<!--    <ProgressBar
+        android:layout_centerInParent="true"
+        local:MvxBind="Visible ShowProgress;"
+        android:indeterminateTint="@color/primaryColor"
+        style="@android:style/Widget.Material.Light.ProgressBar.Small"
+        android:indeterminate="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>-->
 </RelativeLayout>

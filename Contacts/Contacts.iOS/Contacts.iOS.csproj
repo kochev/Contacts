@@ -85,32 +85,39 @@
     <CodesignKey>iPhone Distribution</CodesignKey>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="MvvmCross" Version="5.2.1" />
-    <PackageReference Include="MvvmCross.Binding" Version="5.2.1" />
-    <PackageReference Include="MvvmCross.Core" Version="5.2.1" />
-    <PackageReference Include="MvvmCross.Platform" Version="5.2.1" />
+    <PackageReference Include="modernhttpclient-updated">
+      <Version>3.4.3</Version>
+    </PackageReference>
+    <PackageReference Include="MvvmCross" Version="6.4.2" />
+    <PackageReference Include="Xamarin.iOS.MaterialComponents">
+      <Version>92.0.0</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Views\Cells\ContactItemCell.cs" />
+    <Compile Include="Colors.cs" />
     <Compile Include="DebugTrace.cs" />
+    <Compile Include="Extensions\Extensions.cs" />
     <Compile Include="LinkerPleaseInclude.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
+    <Compile Include="Views\Base\BaseMvxTableViewController.cs" />
+    <Compile Include="Views\Base\BaseViewController.cs" />
+    <Compile Include="Views\Contacts\ContactsViewController.cs" />
+    <Compile Include="Views\Contacts\ContactViewController.cs" />
+    <Compile Include="Views\Sources\ContactsTableViewSource.cs" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Services\Base\AlertService.cs" />
+    <Compile Include="Services\Base\RequestService.cs" />
     <Compile Include="Setup.cs" />
-    <Compile Include="Views\FirstView.designer.cs">
-      <DependentUpon>FirstView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\FirstView.cs" />
-    <InterfaceDefinition Include="Views\FirstView.storyboard">
-      <SubType>Designer</SubType>
-    </InterfaceDefinition>
     <InterfaceDefinition Include="Resources\LaunchScreen.xib" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.iOS" />
@@ -195,5 +202,6 @@
       <Name>Contacts.Core</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
